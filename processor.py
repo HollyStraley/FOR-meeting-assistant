@@ -12,6 +12,7 @@ OPEN_HISTORY_FILE = "open_items_history.json"
 DEFAULT_ROSTER_FILE = "roster.json"
 REFERENCES_FILE = "references.json"
 FOR_ID_COUNTER_FILE = "for_id_counter.json"
+FOR_ID_FIRST_SEEN_FILE = "for_id_first_seen.json"
 
 
 def load_references() -> dict:
@@ -57,6 +58,24 @@ def load_for_counter() -> int:
 
 def save_for_counter(next_id: int):
     Path(FOR_ID_COUNTER_FILE).write_text(json.dumps({"next_id": next_id}, indent=2), encoding="utf-8")
+
+
+def load_first_seen() -> dict:
+    p = Path(FOR_ID_FIRST_SEEN_FILE)
+    return json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
+
+
+def save_first_seen(data: dict):
+    Path(FOR_ID_FIRST_SEEN_FILE).write_text(json.dumps(data, indent=2), encoding="utf-8")
+
+
+def record_first_seen(items: list[dict], meeting_date: str, first_seen: dict):
+    """Record the first time each FOR ID is ever seen (open or closed)."""
+    for item in items:
+        req_id = str(item.get("request_id", "")).strip()
+        if req_id and req_id not in first_seen:
+            first_seen[req_id] = meeting_date
+    return first_seen
 
 
 def assign_for_ids(items: list[dict], counter: int) -> tuple[list[dict], int]:
@@ -124,6 +143,13 @@ def process_transcript(transcript_text: str, output_path: str, roster_path: str 
     result["open_items"] = open_items
     result["closed_items"] = new_closed
     print(f"FOR ID counter: next available is FOR-{counter:03d}")
+
+    # Record first-seen date for all items
+    meeting_date = result.get("meeting", {}).get("date", "Unknown")
+    first_seen = load_first_seen()
+    first_seen = record_first_seen(open_items, meeting_date, first_seen)
+    first_seen = record_first_seen(new_closed, meeting_date, first_seen)
+    save_first_seen(first_seen)
 
     # Attach reference data to matching open items
     if references:

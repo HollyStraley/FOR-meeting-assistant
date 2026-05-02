@@ -18,6 +18,7 @@ ROSTER_FILE = "roster.json"
 OPEN_HISTORY_FILE = "open_items_history.json"
 CLOSED_HISTORY_FILE = "closed_items_history.json"
 MEETING_HISTORY_FILE = "meeting_history.json"
+FIRST_SEEN_FILE = "for_id_first_seen.json"
 
 REGIONS = {
     "Europe":        ["europe", "germany", "france", "uk", "belgium", "netherlands", "spain", "italy"],
@@ -308,6 +309,7 @@ with tab_dash:
     open_history  = json.loads(Path(OPEN_HISTORY_FILE).read_text(encoding="utf-8")) if Path(OPEN_HISTORY_FILE).exists() else []
     closed_items  = json.loads(Path(CLOSED_HISTORY_FILE).read_text(encoding="utf-8")) if Path(CLOSED_HISTORY_FILE).exists() else []
     meeting_hist  = json.loads(Path(MEETING_HISTORY_FILE).read_text(encoding="utf-8")) if Path(MEETING_HISTORY_FILE).exists() else []
+    first_seen_db = json.loads(Path(FIRST_SEEN_FILE).read_text(encoding="utf-8")) if Path(FIRST_SEEN_FILE).exists() else {}
 
     if not open_history and not closed_items:
         st.info("No data yet — process at least one transcript to see the dashboard.")
@@ -321,6 +323,8 @@ with tab_dash:
         DATE_FORMATS = ["%Y-%m-%d", "%B %d, %Y", "%b %d, %Y", "%m/%d/%Y", "%d/%m/%Y", "%Y/%m/%d"]
 
         def parse_date(s: str):
+            if not s or s == "Unknown":
+                return None
             for fmt in DATE_FORMATS:
                 try:
                     return datetime.strptime(s.strip(), fmt)
@@ -329,42 +333,17 @@ with tab_dash:
             return None
 
         days_list = []
-        reversed_history = list(reversed(open_history))
         for c_item in closed_items:
-            req_id = str(c_item.get("request_id", "")).strip().upper()
+            req_id = str(c_item.get("request_id", "")).strip()
             close_date_str = c_item.get("date_closed", "")
-            first_seen = None
-            for run in reversed_history:
-                ids_in_run = [str(i.get("request_id", "")).strip().upper() for i in run.get("items", [])]
-                if req_id in ids_in_run:
-                    first_seen = run.get("meeting_date", "")
-            if first_seen and close_date_str and first_seen != "Unknown" and close_date_str != "Unknown":
-                d1 = parse_date(first_seen)
-                d2 = parse_date(close_date_str)
-                if d1 and d2:
-                    days = (d2 - d1).days
-                    if days > 0:
-                        days_list.append(days)
+            first_seen_date = first_seen_db.get(req_id, "")
+            d1 = parse_date(first_seen_date)
+            d2 = parse_date(close_date_str)
+            if d1 and d2:
+                days = (d2 - d1).days
+                if days > 0:
+                    days_list.append(days)
         avg_days = round(sum(days_list) / len(days_list), 1) if days_list else None
-
-        # Debug info
-        debug_rows = []
-        reversed_history2 = list(reversed(open_history))
-        for c_item in closed_items:
-            req_id2 = str(c_item.get("request_id", "")).strip().upper()
-            close_str = c_item.get("date_closed", "Unknown")
-            first = None
-            for run in reversed_history2:
-                if req_id2 in [str(i.get("request_id","")).strip().upper() for i in run.get("items",[])]:
-                    first = run.get("meeting_date","")
-            d1 = parse_date(first) if first else None
-            d2 = parse_date(close_str) if close_str else None
-            days_val = (d2 - d1).days if d1 and d2 else None
-            debug_rows.append({"FOR ID": req_id2, "First Seen": first or "NOT IN HISTORY", "Date Closed": close_str, "Days": days_val})
-
-        with st.expander("Debug: Days to Close calculation"):
-            import pandas as pd
-            st.dataframe(pd.DataFrame(debug_rows))
 
         # All items text for trend analysis
         all_context = []
