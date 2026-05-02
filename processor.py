@@ -10,6 +10,16 @@ MEETING_HISTORY_FILE = "meeting_history.json"
 WATCH_HISTORY_FILE = "watch_items_history.json"
 OPEN_HISTORY_FILE = "open_items_history.json"
 DEFAULT_ROSTER_FILE = "roster.json"
+REFERENCES_FILE = "references.json"
+
+
+def load_references() -> dict:
+    p = Path(REFERENCES_FILE)
+    if p.exists():
+        refs = json.loads(p.read_text(encoding="utf-8"))
+        print(f"References loaded: {len(refs)} entry/entries")
+        return refs
+    return {}
 
 
 def _load_json(path: str) -> list:
@@ -55,14 +65,26 @@ def process_transcript(transcript_text: str, output_path: str, roster_path: str 
 
     roster = load_roster(roster_path)
     print(f"Roster loaded: {len(roster['members'])} members, {len(roster['flag_rules'])} flag rules")
-    print("Calling Claude API to extract action items...")
 
-    result = extract_action_items(transcript_text, roster)
+    references = load_references()
+
+    print("Calling Claude API to extract action items...")
+    result = extract_action_items(transcript_text, roster, references)
 
     open_items = result.get("open_items", [])
     new_closed = result.get("closed_items", [])
     new_watch = result.get("watch_items", [])
     meeting = result.get("meeting", {})
+
+    # Attach reference data to matching open items
+    if references:
+        for item in open_items:
+            req_id = str(item.get("request_id", "")).strip()
+            if req_id in references:
+                ref = references[req_id]
+                item["tracking_number"] = ref.get("tracking_number", "")
+                item["ref_notes"] = ref.get("notes", "")
+                item["ref_files"] = ", ".join(ref.get("files", []))
 
     print(f"Meeting date: {meeting.get('date', 'Unknown')} | Duration: {meeting.get('duration', 'Unknown')}")
     print(f"Attendees: {', '.join(meeting.get('attendees', []))}")

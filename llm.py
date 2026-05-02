@@ -3,7 +3,7 @@ import anthropic
 from prompts import build_system_prompt, build_user_prompt
 
 
-def extract_action_items(transcript: str, roster: dict) -> dict:
+def extract_action_items(transcript: str, roster: dict, references: dict = None) -> dict:
     client = anthropic.Anthropic()
 
     system_prompt = build_system_prompt(roster)

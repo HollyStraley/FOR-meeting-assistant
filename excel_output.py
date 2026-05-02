@@ -97,9 +97,11 @@ def _confidence_fill(owner_conf: str, priority_conf: str) -> PatternFill:
 
 
 def _open_items_sheet(ws, action_items: list[dict]):
+    has_refs = any(item.get("tracking_number") or item.get("ref_notes") or item.get("ref_files") for item in action_items)
+    columns = OPEN_COLUMNS + [("Tracking # / Ref", 28)] if has_refs else OPEN_COLUMNS
     ws.freeze_panes = "A2"
-    ws.auto_filter.ref = f"A1:{get_column_letter(len(OPEN_COLUMNS))}1"
-    _make_header(ws, OPEN_COLUMNS, HEADER_FILL_BLUE)
+    ws.auto_filter.ref = f"A1:{get_column_letter(len(columns))}1"
+    _make_header(ws, columns, HEADER_FILL_BLUE)
 
     for i, item in enumerate(action_items, start=2):
         flags = item.get("flags") or []
@@ -124,6 +126,9 @@ def _open_items_sheet(ws, action_items: list[dict]):
 
         row_base_fill = PatternFill("solid", fgColor=LOW_CONF_ROW_TINT if has_low_conf else ("F9F9F9" if i % 2 == 0 else "FFFFFF"))
 
+        ref_parts = [p for p in [item.get("tracking_number", ""), item.get("ref_notes", ""), item.get("ref_files", "")] if p]
+        ref_str = " | ".join(ref_parts)
+
         values = [
             item.get("request_id", i - 1),
             item.get("context_summary", ""),
@@ -139,6 +144,8 @@ def _open_items_sheet(ws, action_items: list[dict]):
             flag_str,
             item.get("flag_notes", ""),
         ]
+        if has_refs:
+            values.append(ref_str)
 
         for col_idx, value in enumerate(values, start=1):
             cell = ws.cell(row=i, column=col_idx, value=value)

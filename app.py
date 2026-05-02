@@ -41,17 +41,23 @@ def main():
     output_path = args.output or f"FOR_actions_{datetime.now().strftime('%Y%m%d_%H%M')}.xlsx"
 
     if args.paste:
+        default_date = datetime.now().strftime("%Y-%m-%d")
+        meeting_date = input(f"Meeting date (press Enter for today, {default_date}): ").strip()
+        if not meeting_date:
+            meeting_date = default_date
+
         print("Paste your transcript below.")
         print("When done, press Enter then Ctrl+Z then Enter (Windows) or Ctrl+D (Mac/Linux).")
         print("-" * 60)
         try:
-            transcript_text = sys.stdin.read()
+            pasted = sys.stdin.read()
         except KeyboardInterrupt:
             print("\nCancelled.")
             sys.exit(0)
-        if not transcript_text.strip():
+        if not pasted.strip():
             print("ERROR: No transcript text received.")
             sys.exit(1)
+        transcript_text = f"Meeting Date: {meeting_date}\n\n{pasted}"
     else:
         transcript_path = Path(args.transcript)
         if not transcript_path.exists():
