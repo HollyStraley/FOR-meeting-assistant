@@ -1,0 +1,78 @@
+FOR Meeting Transcript - Stress Test 1: Broken English and Crosstalk
+Date: 2026-05-16
+Start Time: 2:01 PM
+End Time: 2:39 PM
+Attendees: Holly (SIOP Master Scheduler), Anik (Europe Forecast Manager), Janet (China Forecast Manager), Kevin (North America and Latin America Forecast Manager), Lisa (Materials Manager)
+
+---
+
+Holly: Okay, let's go. Anik you want start us?
+
+Anik: Yes, so the — sorry, the FOR request for the boom that go to Germany, uh, we have the approval but the — how do you say — the document for the crossing border, it is not complete yet. We wait for the — the customs broker to send back.
+
+Holly: Okay so the documentation is still pending with the customs broker. Do you have a timeline on that?
+
+Anik: He say maybe end of this week but last time he say same thing so I am not sure.
+
+Holly: Okay we'll note it as end of week but flag it. What's the FOR number on that one?
+
+Anik: It is FOR-015.
+
+Holly: Got it. Janet, FOR-016, the China situation — I saw you emailed but I didn't fully understand, can you walk us through?
+
+Janet: Yes so, the customer they want the — the telehandler, two unit, but the problem is the forecast group it belong to different region. So we need to, uh, reassign but also the material is — I think Lisa can explain better.
+
+Lisa: Right so the materials on those two telehandlers haven't cleared yet. We're waiting on one component from a supplier and until that clears I can't approve the forecast group change.
+
+Holly: Okay so FOR-016 is blocked on materials, Lisa owns that piece. Janet what do you need once materials clears?
+
+Janet: Once material clear I update the forecast group and notify the customer. Maybe two day after that.
+
+Holly: Good. Kevin, you're on mute.
+
+Kevin: Sorry — yeah so FOR-017, this is the one I been trying to get resolved since like — [crosstalk]
+
+Anik: Sorry Kevin I have a question about FOR-016 —
+
+Kevin: Go ahead.
+
+Anik: Janet, the customer in China, is this the same one we talk about last month? The one with the — the delivery problem?
+
+Janet: No no different customer. This one is new account.
+
+Anik: Okay okay sorry Kevin go ahead.
+
+Kevin: Yeah so FOR-017, the LATAM reallocation, we submitted this I think in March or — actually it might have been February. We have units sitting in the Houston facility that were supposed to go to a customer in — [audio cuts out for approximately 4 seconds] — anyway the customer pulled out so now we just need someone to reassign them to a different forecast group. Lisa has to sign off on materials but I don't know if she got my email.
+
+Lisa: I did get it, I just haven't had a chance to look at it yet. Can you resend the details so it's fresh?
+
+Kevin: Yeah I'll send again today.
+
+Holly: Okay so FOR-017, Kevin to resend details to Lisa, Lisa to review and sign off. Kevin how urgent is this?
+
+Kevin: It's been sitting like three months so pretty urgent I would say.
+
+Holly: Flagging that one then. Okay FOR-018 — this is a new one. Lisa you brought this up?
+
+Lisa: Yes, so we had — I don't know if it's an actual FOR request yet but we have a boom that we think needs to go from our warehouse in Dallas to — I want to say it was Singapore? Someone mentioned Singapore but I'm not sure if that was confirmed.
+
+Holly: Do you know who requested it?
+
+Lisa: It came up in a side conversation with Dave I think but I don't have anything in writing.
+
+Holly: Okay I'll mark this one as needs human review, we can't action it without more information. I'll follow up with Dave separately.
+
+Lisa: Yeah that makes sense.
+
+Holly: Any other new items?
+
+Kevin: Actually yeah — one more. There's a customer in Brazil, they reached out to our sales rep asking about availability of telehandlers. Nothing formal yet but our sales rep wants to know if we can reserve some units. I don't think it's a FOR request officially but it might become one.
+
+Holly: Not enough to open a formal FOR yet, I'll just note it as a watch item. Kevin can you keep me posted if that formalizes?
+
+Kevin: Will do.
+
+Holly: Alright I think that's it. Thanks everyone.
+
+---
+[End of meeting]

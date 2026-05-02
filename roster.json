@@ -1,47 +1,72 @@
 {
   "members": [
     {
-      "name": "Linda",
-      "full_name": "Linda Placeholder",
-      "email": "linda.placeholder@company.com",
-      "title": "Procurement Specialist",
-      "department": "Procurement"
-    },
-    {
-      "name": "Tom",
-      "full_name": "Tom Placeholder",
-      "email": "tom.placeholder@company.com",
+      "name": "Holly",
+      "full_name": "Holly Placeholder",
+      "email": "hstrale1@jh.edu",
       "title": "SIOP Master Scheduler",
       "department": "Supply Chain"
     },
     {
-      "name": "Derek",
-      "full_name": "Derek Placeholder",
-      "email": "derek.placeholder@company.com",
-      "title": "Procurement Analyst",
-      "department": "Procurement"
+      "name": "Susan",
+      "full_name": "Susan Placeholder",
+      "email": "susan.placeholder@company.com",
+      "title": "SIOP Director",
+      "department": "Supply Chain"
+    },
+    {
+      "name": "Dave",
+      "full_name": "Dave Placeholder",
+      "email": "dave.placeholder@company.com",
+      "title": "SIOP Director",
+      "department": "Supply Chain"
+    },
+    {
+      "name": "Anik",
+      "full_name": "Anik Placeholder",
+      "email": "anik.placeholder@company.com",
+      "title": "Europe Forecast Manager",
+      "department": "Forecasting"
+    },
+    {
+      "name": "Janet",
+      "full_name": "Janet Placeholder",
+      "email": "janet.placeholder@company.com",
+      "title": "China Forecast Manager",
+      "department": "Forecasting"
+    },
+    {
+      "name": "Lisa",
+      "full_name": "Lisa Placeholder",
+      "email": "lisa.placeholder@company.com",
+      "title": "Materials Manager",
+      "department": "Materials"
+    },
+    {
+      "name": "Tim",
+      "full_name": "Tim Placeholder",
+      "email": "tim.placeholder@company.com",
+      "title": "Materials Director",
+      "department": "Materials"
+    },
+    {
+      "name": "Kevin",
+      "full_name": "Kevin Placeholder",
+      "email": "kevin.placeholder@company.com",
+      "title": "North America and Latin America Forecast Manager",
+      "department": "Forecasting"
     }
   ],
   "flag_rules": [
     {
       "rule": "engine_country_move",
       "description": "Flag any discussion about moving engines or machines to a different country or region",
-      "keywords": ["moving to", "ship to", "transfer to", "relocate", "export", "country", "region", "cross-border"]
+      "keywords": ["moving to", "ship to", "transfer to", "relocate", "export", "country", "region", "cross-border", "boom", "booms", "telehandler", "telehandlers"]
     },
     {
       "rule": "long_pending",
       "description": "Flag any items described as pending for more than 2 weeks without resolution",
       "keywords": ["weeks", "months", "still waiting", "no response", "haven't heard", "been pending"]
-    },
-    {
-      "rule": "escalation_needed",
-      "description": "Flag items where escalation to leadership is discussed",
-      "keywords": ["escalate", "escalation", "leadership", "management", "VP", "director"]
-    },
-    {
-      "rule": "alternate_sourcing",
-      "description": "Flag any discussion about finding alternate suppliers or swap units",
-      "keywords": ["alternate", "alternative", "swap unit", "backup supplier", "shortlist", "qualified alternates"]
     }
   ]
 }

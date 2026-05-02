@@ -1,0 +1,152 @@
+FOR Meeting Transcript - Extended Test
+Date: 2026-05-02
+Attendees: Holly (SIOP Master Scheduler), Susan (SIOP Director), Dave (SIOP Director), Anik (Europe Forecast Manager), Janet (China Forecast Manager), Lisa (Materials Manager), Tim (Materials Director), Kevin (North America and Latin America Forecast Manager)
+
+---
+
+Holly: Okay I think everyone is on now. Let's get started. As usual I'll go through the open FOR list and we can give updates. We have eleven items open right now so let's try to move through them. First one — FOR-001, the GX4 engine move for the Netherlands facility. Anik, this one's yours. Any update?
+
+Anik: Yes, so we got preliminary approval from the regional team but we're still waiting on the formal sign-off from compliance. It's been about three weeks now and I keep following up but nothing confirmed yet.
+
+Susan: Three weeks is too long. Is there a specific person holding it up?
+
+Anik: It's going through their legal review. I don't have a direct contact there, it just goes through the compliance portal.
+
+Dave: Can we flag that one? If it's an engine moving to a different country we need the paperwork before anything ships.
+
+Holly: Agreed, I'll keep it flagged. Anik, can you send me whatever reference number you have for that compliance ticket so I can track it on my end too?
+
+Anik: Sure, I'll send that after the call.
+
+Holly: Great. Moving on — FOR-002, the forecast group change for the Asia-Pacific batch. Janet, where are we?
+
+Janet: So the materials were approved last week finally. I sent Holly the confirmation. We should be good to move that to the new forecast group now.
+
+Holly: Yes I have that, I'll action that today. Good. FOR-003 — Kevin, this is the LATAM reallocation request. I think this came from you originally?
+
+Kevin: Yeah so we submitted that back in February. The situation is we have two units sitting in the Mexico warehouse that need to be reassigned to a different forecast group because the original customer pulled out. We've been waiting on materials sign-off for that for — I want to say it's been about six weeks now?
+
+Lisa: I can speak to that. We had it in the queue but it got bumped when we had the priority escalation in March. I can get eyes on it this week.
+
+Kevin: Six weeks is a long time, Lisa. We've got units just sitting.
+
+Lisa: I hear you. I'll make it a priority this week and get back to Holly by Thursday.
+
+Holly: Okay so Lisa owns the materials approval for FOR-003, due Thursday. Kevin, does that work?
+
+Kevin: Yes that works.
+
+Holly: FOR-004 — this one is new, came in via email yesterday. Dave, you sent this one I think?
+
+Dave: Yeah, so we have a request to move three GT7 engines from our Frankfurt warehouse to a customer site in South Korea. This is a cross-border move so it needs the full compliance review. I need someone to own the documentation side.
+
+Holly: Tim, can that fall under your team?
+
+Tim: Yeah we can take that. I'll assign it to one of my folks and get the documentation started. We'll need Janet's team to confirm the receiving forecast group on the Korea side.
+
+Janet: I can confirm that, just send me the unit serial numbers.
+
+Dave: I'll get those to Janet today.
+
+Holly: Okay so Tim owns documentation for FOR-004, Janet confirms the receiving forecast group once she gets the serial numbers from Dave. Got it. FOR-005 — Susan, this is the one you flagged last week about the GX4 swap unit.
+
+Susan: Right. So we still haven't found a qualified swap unit. I reached out to the procurement team but I haven't heard back. It's going on two weeks with no response.
+
+Holly: Do we know who specifically in procurement?
+
+Susan: I emailed the general procurement inbox. I don't have a direct contact.
+
+Dave: That inbox is notoriously slow. Susan, do you want me to reach out directly to someone I know over there?
+
+Susan: Yes please, that would help.
+
+Dave: I'll do that today.
+
+Holly: So Dave is taking action on FOR-005 to get procurement moving on the swap unit search. Susan, are you still the owner of record on this one?
+
+Susan: Yes keep it under me, Dave is just helping unblock it.
+
+Holly: FOR-006 — this is the China GT9 forecast group move. Janet?
+
+Janet: This one is blocked. The customer changed their delivery window and now the materials approval we got last month may no longer be valid. I need to go back to Lisa's team to get a re-approval.
+
+Lisa: When did the delivery window change?
+
+Janet: About ten days ago. I was going to bring it up today.
+
+Lisa: Okay, send me the updated delivery details and I'll get re-approval started. It shouldn't take long since we already did the first pass.
+
+Holly: So FOR-006 is back to Lisa for re-approval, Janet sends the updated details. How long do you think re-approval takes, Lisa?
+
+Lisa: If I get the details by end of day today, probably three to four business days.
+
+Holly: Good. FOR-007 — Kevin, North America engine reallocation, this has been sitting for a while.
+
+Kevin: Yeah this one I think is actually resolved. The unit got moved last week. Holly did you get the confirmation on that?
+
+Holly: I did not get anything yet.
+
+Kevin: I'll forward you the confirmation email right after this.
+
+Holly: Okay, I'll close FOR-007 once I get that confirmation. FOR-008 — this is a new one from Anik. Anik, do you want to walk us through it?
+
+Anik: Yes, so we have a customer in Germany requesting priority status on a GX4 engine that's currently allocated to a lower priority account. They're saying they need it within 45 days or the deal is at risk. I need a priority review.
+
+Susan: What's the current allocation on that unit?
+
+Anik: It's allocated to a forecast group that Kevin manages actually, for a North America account.
+
+Kevin: Which unit are we talking about?
+
+Anik: Serial number GX4-8821.
+
+Kevin: Let me check — yeah that's a medium priority account. I don't have a hard ship date commitment on it yet.
+
+Susan: If Anik's customer is a higher value deal we should probably prioritize that. Dave, can you weigh in on the business priority here?
+
+Dave: I'd need to see the deal values. Anik, can you send me the opportunity details?
+
+Anik: Yes I'll send that today.
+
+Susan: Let's keep this open and revisit once Dave has the numbers. Holly, flag this one as priority pending review.
+
+Holly: Got it. FOR-008 owned by Susan pending Dave's review of deal values. FOR-009 — Lisa, materials approval for the European batch.
+
+Lisa: Still in progress. We had a hold due to a supplier delay. I'm expecting the supplier to confirm by end of this week and then I can move forward.
+
+Holly: Okay, so FOR-009 is waiting on supplier confirmation, Lisa owns it, expected update end of this week. FOR-010 — this is an older one, the GX4 transfer to the France distribution center. This has been open for about two months now.
+
+Dave: Yeah what's the status on that one? I thought it was almost done.
+
+Holly: Last update I have is from March. Anik, is this yours?
+
+Anik: Oh yes, I forgot about that one. The transfer was approved but we never confirmed the receiving logistics partner on the France side. That's been sitting.
+
+Tim: Logistics coordination is my team. I didn't know this was still open, nobody looped me in.
+
+Holly: Okay — Tim, can you own getting the logistics partner confirmed for FOR-010?
+
+Tim: Yes. I'll reach out to our France logistics contact today.
+
+Holly: And Anik, since this has been sitting for two months I want to flag this one for the record. Last item — FOR-011. This one came in this morning. Kevin?
+
+Kevin: Yes so we have an urgent request from a LATAM customer. They want to know if we can expedite a GT7 engine shipment. They're asking about shipping it from our Houston facility directly to Brazil. That's going to need a cross-border compliance check.
+
+Dave: Brazil is a complex destination. There are export control considerations.
+
+Susan: Holly, flag that one immediately. We need compliance involved before anyone commits anything to the customer.
+
+Holly: Flagged. Kevin, please do not confirm anything to the customer yet. Who is the customer contact on your end?
+
+Kevin: I'll hold off. The contact is through our LATAM sales rep, I'll let them know to pause.
+
+Susan: Good. I'll loop in compliance directly on this one.
+
+Holly: FOR-011 owned by Susan with Kevin supporting. Compliance to be looped in by Susan. Okay everyone I think that's all eleven. Let me recap the actions before we close out...
+
+Susan: Actually, sorry Holly — I just want to add, for any of the items that have been sitting more than a month can we do a separate check-in? Some of these feel like they've been falling through the cracks.
+
+Holly: Agreed. I'll send a separate email after this with just the long-running items. Okay let's wrap up. Thanks everyone.
+
+---
+[End of meeting]

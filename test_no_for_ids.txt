@@ -1,0 +1,132 @@
+FOR Meeting Transcript - Stress Test 4: No FOR ID References
+Date: 2026-05-30
+Start Time: 9:00 AM
+End Time: 9:44 AM
+Attendees: Holly (SIOP Master Scheduler), Susan (SIOP Director), Dave (SIOP Director), Anik (Europe Forecast Manager), Janet (China Forecast Manager), Lisa (Materials Manager), Tim (Materials Director), Kevin (North America and Latin America Forecast Manager)
+
+---
+
+Holly: Good morning everyone. Let's get into it. I want to start with a few things that got resolved since we last spoke. Kevin, the Houston units — those are done right?
+
+Kevin: Yeah fully closed out. The miscategorization got fixed, units are in the right forecast group, customer is happy.
+
+Holly: Great. And Tim — the UK shipment we were tracking?
+
+Tim: Delivered and confirmed. Customer signed off last week. Nothing left on that one.
+
+Holly: Good. Those two are closed. Now let's get into what's still open. Anik, let's start with you. The Germany situation — still waiting?
+
+Anik: Still waiting, yes. The customs broker keeps saying end of week and then nothing happens. We are now past five weeks on this one. I am getting frustrated honestly.
+
+Holly: Five weeks is too long. Has anyone gone above the customs broker yet?
+
+Anik: Not yet. I didn't want to overstep.
+
+Susan: Anik, at five weeks you are not overstepping. Can you identify who the broker's supervisor is and copy me on an email to them?
+
+Anik: Yes I can do that today.
+
+Holly: Good. Susan, are you okay being looped in?
+
+Susan: Yes, copy me and I'll add weight to it if needed.
+
+Holly: Okay. Moving on — the Belgium move. I know there was some back and forth last time about who was owning what. Did that get sorted?
+
+Anik: Yes, I am handling the customer communication side and Tim has the compliance documentation.
+
+Tim: Correct. Anik sent me the briefing yesterday, I've started on the paperwork. I'd say about three more days on my end.
+
+Anik: And I already confirmed with the customer that the move is still a go.
+
+Holly: Perfect, that one is moving. Lisa — the LATAM materials approval. We've been waiting on this one for a while.
+
+Lisa: I know, I'm sorry. The audit finally wrapped up so my team has full bandwidth again. I'm targeting end of this week for the approval.
+
+Kevin: That would be great. The units have just been sitting.
+
+Holly: Kevin, is the customer still expecting delivery on the original timeline?
+
+Kevin: They've been patient but they're starting to ask questions. I'd really like to get them an update by Monday.
+
+Lisa: I will do my best. If I hit any blockers I'll flag Holly immediately.
+
+Holly: Okay. Lisa owns that, target end of week. Kevin follow up with the customer and let them know we're close.
+
+Dave: Holly, can I jump in on the France thing?
+
+Holly: Yes go ahead.
+
+Dave: So Tim and I are co-owning the boom move from the UK to France. I've confirmed with the UK facility they're ready to release the units. Tim, where are you on compliance?
+
+Tim: Compliance documentation is submitted. I'm just waiting on the stamp back from the regulatory side. Probably two to three more days.
+
+Dave: Once that comes through we can schedule the shipment immediately.
+
+Holly: Good. Dave monitoring the UK side, Tim waiting on regulatory clearance. Janet — the China telehandler situation.
+
+Janet: So the materials finally cleared — Lisa can confirm — and I've updated the forecast group. I notified the customer yesterday. I think that one is actually done.
+
+Lisa: Yes materials cleared on my end earlier this week.
+
+Holly: Great, we can close that one out. Nice. Now the Japan request — Marcus's submission. Janet, did you have a chance to connect with him?
+
+Janet: I did. Marcus is legitimate, he is on the Asia-Pacific commercial team. The request is real — two telehandler units from Singapore to Japan. I can own the forecast group side of it and Tim would need to do the compliance documentation given the cross-region move.
+
+Tim: Yeah that's fine, same as the other cross-border ones. Just get me the unit details.
+
+Janet: I'll send them today.
+
+Holly: Okay so that one is now active — Janet owns forecast group, Tim owns compliance documentation. Dave, do you want to flag that one given the cross-region move?
+
+Dave: Definitely flag it. Singapore to Japan is straightforward but it still needs proper compliance review before anything ships.
+
+Holly: Noted. Kevin — the Brazil telehandler inquiry. Did that ever formalize into a real request?
+
+Kevin: It did actually. The customer submitted through our sales rep yesterday. They want to reserve three telehandler units. No ship date yet but they want a commitment.
+
+Holly: Can we make a commitment without materials sign-off?
+
+Lisa: No, I'd need to review before we commit anything.
+
+Kevin: How long would that take?
+
+Lisa: If I get the unit details today probably forty-eight hours.
+
+Kevin: I'll get you the details this morning.
+
+Holly: Okay so Kevin gets Lisa the details, Lisa does a forty-eight hour review, and then Kevin can go back to the customer. Do not commit to the customer until Lisa signs off.
+
+Kevin: Understood.
+
+Holly: Now the boom inventory rebalancing that Dave brought up informally — is that turning into an actual request?
+
+Dave: Yes, I'm ready to submit it formally. We want to move about eight boom units from the North America pool to Europe to cover some demand gaps Anik has flagged.
+
+Anik: Yes, we have three accounts that are under-allocated right now. This would help a lot.
+
+Holly: Okay Dave is formally submitting that one. Tim, that will need materials review and probably compliance given the cross-region movement.
+
+Tim: Agree. Once Dave submits I'll get eyes on it.
+
+Susan: Holly, can we make that one a priority? Anik's accounts have been waiting.
+
+Holly: Yes flagging it as high priority. Dave submit today please.
+
+Dave: Will do.
+
+Holly: Last item — the telehandler reallocation that nobody can find a requester for. Any progress on figuring out who submitted it?
+
+Janet: I asked around the old Asia team contacts. Nobody is claiming it.
+
+Kevin: I reached out to Marcus too since his name came up and he said it wasn't him.
+
+Susan: If we can't identify a requester after all this time I think we need to formally put it on hold and stop spending time on it. It's going to sit in limbo forever otherwise.
+
+Holly: Agreed. I'm going to mark that one as formally on hold pending requester identification. If nobody comes forward in the next two weeks I'll recommend we close it out entirely.
+
+Susan: That's reasonable.
+
+Holly: Okay I think that's everything. Good meeting everyone. Talk in two weeks.
+
+---
+[End of meeting]

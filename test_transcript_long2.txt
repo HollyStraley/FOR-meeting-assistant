@@ -1,0 +1,116 @@
+FOR Meeting Transcript - Extended Test 2
+Date: 2026-05-02
+Start Time: 9:02 AM
+End Time: 9:47 AM
+Attendees: Holly (SIOP Master Scheduler), Susan (SIOP Director), Dave (SIOP Director), Anik (Europe Forecast Manager), Janet (China Forecast Manager), Lisa (Materials Manager), Tim (Materials Director), Kevin (North America and Latin America Forecast Manager)
+
+---
+
+Holly: Good morning everyone. Let's get started. Before we go into open items I want to do a quick recap of everything that was closed since our last meeting two weeks ago. We had four items close out.
+
+Holly: First closed item — FOR-007, the North America engine reallocation that Kevin submitted. That one is fully resolved, the unit was moved and we got the confirmation email. Closing that out.
+
+Kevin: Confirmed, that's done.
+
+Holly: FOR-009 — Lisa, the materials approval for the European batch. That came through last week correct?
+
+Lisa: Yes, supplier confirmed and materials approval is complete. That one is closed.
+
+Holly: Good. FOR-012 — this was the GT5 forecast group change for the Canada account. Janet you handled that one.
+
+Janet: Yes that's closed. The forecast group was updated and the customer was notified.
+
+Holly: And FOR-013 — Tim, the logistics coordination for the UK shipment.
+
+Tim: That's done. Shipment left the facility on April 28th and the customer confirmed receipt.
+
+Holly: Great. So four items closed since last meeting — FOR-007, FOR-009, FOR-012, FOR-013. Now let's move into open items. We have eleven open right now.
+
+Holly: FOR-001 — Anik, the GX4 engine move for the Netherlands facility. Any update?
+
+Anik: Still waiting on formal compliance sign-off. I sent another follow-up yesterday. It's been about five weeks now with no confirmed answer.
+
+Susan: Five weeks is too long. Anik, can you get me the compliance ticket number and I'll escalate on my end?
+
+Anik: Yes I'll send that right after the call.
+
+Holly: FOR-001 still open, Anik to send compliance ticket to Susan, Susan escalating. FOR-002 — Janet, the Asia-Pacific forecast group change.
+
+Janet: That one is actioned. Holly moved it to the new forecast group earlier this week.
+
+Holly: Yes that's done on my end, we can close FOR-002 actually.
+
+Janet: Great.
+
+Holly: FOR-003 — Kevin, the LATAM reallocation. Lisa was going to get eyes on materials approval by Thursday last week.
+
+Lisa: I did get to it. Materials approval is submitted, we're just waiting on the final sign-off from the system. Should come through today or tomorrow.
+
+Kevin: Good, thank you Lisa.
+
+Holly: Okay, FOR-003 still technically open, waiting on final system sign-off. Lisa owns it. FOR-004 — Tim, the GT7 engines from Frankfurt to South Korea. How is documentation coming?
+
+Tim: Documentation is started. I need the serial numbers from Dave still — Dave did you send those to Janet?
+
+Dave: I sent them to Janet yesterday, I'll forward to you as well Tim.
+
+Tim: Okay once I have those I can finish the documentation. Probably two more days.
+
+Janet: I received the serial numbers, the receiving forecast group on the Korea side is confirmed.
+
+Holly: Good. FOR-004 still open, Tim finalizing documentation pending serial numbers from Dave. FOR-005 — Dave, the GX4 swap unit search.
+
+Dave: I reached out to my procurement contact directly. They came back with two potential swap units. Susan, I sent you those options yesterday, did you get a chance to review?
+
+Susan: I did, I think option two looks good. Can we move forward on that one?
+
+Dave: I'll confirm with procurement today and get the ball rolling.
+
+Holly: FOR-005, Dave confirming swap unit option two with procurement today. Susan approved. FOR-006 — Janet, the China GT9 re-approval.
+
+Janet: I sent Lisa the updated delivery details on Monday.
+
+Lisa: Yes I have them. Re-approval is in progress, should be done by end of this week.
+
+Holly: FOR-006 still open, Lisa completing re-approval by end of week. FOR-008 — Susan, the GX4 priority review for Anik's German customer.
+
+Susan: Dave sent me the deal values. The Germany opportunity is significantly higher value. I'm recommending we reprioritize GX4-8821 to Anik's customer.
+
+Kevin: That works on my end, I don't have a hard commitment on the North America account yet.
+
+Dave: Agreed, let's make that call.
+
+Holly: Okay so FOR-008, decision made to reprioritize GX4-8821 to Anik's German customer. Anik, can you confirm with your customer?
+
+Anik: Yes I'll reach out to them today.
+
+Holly: FOR-010 — Tim, the GX4 transfer to the France distribution center. Logistics partner?
+
+Tim: I reached out to our France logistics contact on Friday. They came back this morning, they can receive the shipment. I'll confirm the date with them today.
+
+Holly: Good progress. FOR-010, Tim confirming shipment date with France logistics partner today. FOR-011 — Susan, the GT7 shipment to Brazil. Compliance status?
+
+Susan: I looped in compliance on Thursday. They flagged it as a complex export situation. They're reviewing and expect to have a preliminary answer by end of next week.
+
+Kevin: I've told our LATAM sales rep to hold any commitments to the customer.
+
+Holly: FOR-011 still open, compliance reviewing, Susan owns it, no customer commitments until compliance clears. Last item — FOR-014, this is a new one that came in this morning. Dave you sent this?
+
+Dave: Yes, we have a request from our Asia team to evaluate moving two GX9 engines currently sitting in our Singapore warehouse to a new forecast group tied to a Japanese customer. It's a cross-region move so it'll need compliance sign-off and a forecast group update.
+
+Holly: Anik, does this fall under your scope or Janet's?
+
+Janet: That would be mine, Japan falls under my region.
+
+Dave: Janet, I'll send you the details after the call.
+
+Janet: Okay, I'll start the forecast group evaluation once I have the details.
+
+Holly: FOR-014 owned by Janet, Dave sending details after the call, compliance will also need to be flagged given the cross-region engine move. Okay I think that covers everything. Any other business before we wrap?
+
+Susan: Just a reminder that next meeting we'll be doing the mid-year SIOP review so it'll be a longer session. Plan for ninety minutes.
+
+Holly: Good reminder. I'll send the updated invite. Okay, thanks everyone — talk in two weeks.
+
+---
+[End of meeting]

@@ -1,0 +1,88 @@
+FOR Meeting Transcript - Stress Test 2: Contested and Negotiated Ownership
+Date: 2026-05-16
+Start Time: 10:04 AM
+End Time: 10:52 AM
+Attendees: Holly (SIOP Master Scheduler), Susan (SIOP Director), Dave (SIOP Director), Anik (Europe Forecast Manager), Lisa (Materials Manager), Tim (Materials Director)
+
+---
+
+Holly: Good morning. Let's run through the list. FOR-019 first — this is the GX4 move to the Belgium facility. Last time we said Anik was going to own the documentation but Dave I think you had a concern about that?
+
+Dave: Yeah my concern is that documentation for cross-border moves should go through Tim's team, not through the forecast managers. It's a capacity thing — Anik's team doesn't have the bandwidth and frankly it's not really their job.
+
+Anik: I don't mind taking it, I'm closer to the customer and I know the details better than Tim's team would.
+
+Tim: I'm not saying we can't do it, I just need someone to brief me on the specifics. Anik, if you own the customer communication side, my team can own the actual compliance documentation.
+
+Anik: That works for me.
+
+Susan: So to be clear — Anik owns customer communication, Tim owns compliance documentation?
+
+Anik: Yes.
+
+Tim: Yes.
+
+Holly: Okay. FOR-019, split ownership — Anik on customer side, Tim on compliance documentation. Do we have a timeline?
+
+Tim: I need Anik to brief me first. Anik can you send me the details by end of today?
+
+Anik: Yes I'll send this afternoon.
+
+Holly: Good. FOR-020 — the materials approval for the LATAM batch. Lisa, last meeting you said this would be done by Thursday. It's now the following week.
+
+Lisa: I know, I'm sorry. We had an unexpected audit come in and it completely derailed my team. I'm targeting end of this week now.
+
+Dave: Lisa, we've pushed this twice now. Is there anything blocking it that we can help remove?
+
+Lisa: Honestly it's just bandwidth. If Tim could spare someone from his team to help review the supplier documentation that would speed it up.
+
+Tim: I can do that. I'll assign someone today.
+
+Dave: Okay but who is actually the owner here? Lisa or Tim?
+
+Lisa: I'm still the owner, Tim's team is just helping.
+
+Dave: Okay so Lisa owns FOR-020, Tim is supporting. Holly please note that.
+
+Holly: Noted. FOR-021 — this is the new one Susan flagged yesterday about the boom units going to France.
+
+Susan: Right. We have three boom units that need to move from the UK warehouse to a distribution center in France. It's cross-border so it needs the usual compliance review. I was thinking Dave could own this since he has the relationship with the UK facility.
+
+Dave: I can take the coordination side but the compliance piece needs to go through Tim.
+
+Tim: Agreed. Same structure as FOR-019 — I'll own compliance, Dave owns coordination.
+
+Susan: That works. Holly, Dave and Tim co-own FOR-021.
+
+Holly: Got it. FOR-022 — Kevin submitted this one but he's not on today's call. It's a forecast group change for a North America account. Does anyone know the status?
+
+Dave: I think Kevin mentioned it to me informally — he said it was waiting on materials sign-off but I don't have details.
+
+Lisa: I don't have anything from Kevin on this one.
+
+Susan: We shouldn't action it without Kevin on the call. Holly, can you flag it as pending Kevin's update?
+
+Holly: Yes — FOR-022 on hold until Kevin can join and provide an update. I'll follow up with him directly. FOR-023 — this one is interesting. It came in as an email from someone named Marcus but I don't think Marcus is on our regular roster. The request is to move some telehandler units from our Singapore warehouse to Japan.
+
+Susan: Marcus — is that from the Asia-Pacific commercial team?
+
+Dave: I think so but I'm not sure. I don't know Marcus personally.
+
+Anik: I think Janet would know, she covers that region.
+
+Holly: Janet's not on today's call either. So we have an unrecognized requester and no regional contact available.
+
+Susan: We cannot action a cross-region equipment move from someone not on the roster. Holly, flag this as needs human review and let's get Janet and Marcus on a call before anything moves.
+
+Holly: Agreed. FOR-023 flagged, needs human review, waiting on Janet to verify Marcus and the request details.
+
+Dave: I'll send Janet a heads up so she's not caught off guard.
+
+Holly: FOR-024 — last one. This is the GX4 transfer that Tim's team started last month. Tim, where are we?
+
+Tim: We're actually almost done. All the documentation is filed, we're just waiting on the final customs clearance stamp. Should be in by end of this week, and then we can close it out.
+
+Holly: Great. FOR-024 nearly closed, Tim monitoring customs clearance. Alright I think that covers everything. Good meeting everyone.
+
+---
+[End of meeting]

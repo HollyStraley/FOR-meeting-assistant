@@ -2,3 +2,6 @@
 __pycache__/
 *.pyc
 *.xlsx
+closed_items_history.json
+meeting_history.json
+watch_items_history.json

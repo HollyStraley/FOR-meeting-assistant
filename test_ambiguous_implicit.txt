@@ -1,0 +1,88 @@
+FOR Meeting Transcript - Stress Test 3: Ambiguous Pronouns and Implicit Actions
+Date: 2026-05-16
+Start Time: 3:30 PM
+End Time: 4:08 PM
+Attendees: Holly (SIOP Master Scheduler), Susan (SIOP Director), Janet (China Forecast Manager), Kevin (North America and Latin America Forecast Manager), Tim (Materials Director)
+
+---
+
+Holly: Okay let's get through this quickly, I know everyone has a hard stop at four. We have a mix of old and new items.
+
+Holly: FOR-025 — the situation with the China units. Janet, they came back with a response?
+
+Janet: They did but it wasn't what we were hoping for. They're saying they can't confirm until their side finalizes the internal review. We've been waiting on that for about a month now.
+
+Holly: A month with no resolution. Is there anything we can do to push it?
+
+Janet: I've tried. At this point it really needs someone more senior to reach out to them.
+
+Susan: I can make a call. Who is the main contact over there?
+
+Janet: I'll send you the contact details after this.
+
+Susan: Okay I'll reach out this week.
+
+Holly: So Susan is going to reach out to the China contact on FOR-025. Janet sends contact details. FOR-026 — Kevin, the units in Houston.
+
+Kevin: Yeah so we finally figured out what happened. They were miscategorized back in February which is why nobody could find them in the system. We got them corrected and they're now in the right forecast group. I think we can close that one.
+
+Holly: Great, FOR-026 closed. Anyone need to do anything before we officially close it?
+
+Kevin: I don't think so, it's all done on my end.
+
+Tim: Same, nothing needed from materials.
+
+Holly: Closing FOR-026. FOR-027 — Tim, the materials hold.
+
+Tim: Right so the hold is still on because of the supplier situation. They told us two weeks ago it would be resolved within the week and we still haven't heard anything. I sent a follow-up Monday and nothing.
+
+Holly: That's concerning. Do we have a backup supplier we can go to?
+
+Tim: We've looked but they're pretty specialized components. There isn't really a straightforward alternative.
+
+Kevin: Is there any flexibility on the timeline from the customer side?
+
+Tim: I don't know — that would be on Janet or Kevin's side depending on which account it is.
+
+Holly: Which account is it?
+
+Tim: It's — I actually don't have that in front of me. I'll have to check and get back to you.
+
+Holly: Okay so FOR-027 is still blocked, Tim to follow up on which account is affected and check on customer timeline flexibility. Still waiting on the supplier. FOR-028 — this is a new one that kind of came up organically. Susan, do you want to explain?
+
+Susan: Yes, so in my one-on-one with Dave yesterday he mentioned that there's been some informal discussion about potentially moving some of our boom inventory from the North America region to Europe to balance out some demand gaps. Nothing formal yet, but he wanted it on the radar.
+
+Holly: Is Dave going to submit a formal FOR?
+
+Susan: He said he would but I don't know when.
+
+Holly: Okay. So FOR-028 is informal — pending formal submission from Dave. I'll follow up with him. We shouldn't action anything until there's a proper request. FOR-029 — this one's been sitting a while. It's the telehandler reallocation that someone submitted before I joined — I don't actually have a clear requester on record for it.
+
+Kevin: I think that might have been Marcus actually, but I'm not sure.
+
+Janet: It could have been from the old Asia team before they restructured.
+
+Tim: The materials on that one were approved back in March. I remember signing off on it.
+
+Holly: Okay so materials are approved but we don't know who requested it or who currently owns the customer side of it.
+
+Susan: Don't action it without knowing who the requester is. Flag it as needs human review.
+
+Holly: Agreed. FOR-029 flagged, unknown requester, needs human review before we can move forward. Tim, materials approval is on record at least. FOR-030 — last one. Kevin, new request?
+
+Kevin: Yeah — we have a LATAM customer that's asking about priority on two boom units. They've been waiting a while and they're starting to get impatient. They want to know if we can move them up in the queue.
+
+Holly: Do we know where those units are currently allocated?
+
+Kevin: They're in the general North America pool right now. No hard commitment on them.
+
+Holly: Susan, priority calls go through you and Dave right?
+
+Susan: Yes. Kevin send me the customer details and I'll loop Dave in and we'll make a call.
+
+Kevin: I'll send that today.
+
+Holly: FOR-030, Kevin sends customer details to Susan, Susan and Dave to make priority decision. Okay I think that's everything — we're right at four. Thanks all.
+
+---
+[End of meeting]
