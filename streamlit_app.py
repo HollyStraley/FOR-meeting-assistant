@@ -347,6 +347,25 @@ with tab_dash:
                         days_list.append(days)
         avg_days = round(sum(days_list) / len(days_list), 1) if days_list else None
 
+        # Debug info
+        debug_rows = []
+        reversed_history2 = list(reversed(open_history))
+        for c_item in closed_items:
+            req_id2 = str(c_item.get("request_id", "")).strip().upper()
+            close_str = c_item.get("date_closed", "Unknown")
+            first = None
+            for run in reversed_history2:
+                if req_id2 in [str(i.get("request_id","")).strip().upper() for i in run.get("items",[])]:
+                    first = run.get("meeting_date","")
+            d1 = parse_date(first) if first else None
+            d2 = parse_date(close_str) if close_str else None
+            days_val = (d2 - d1).days if d1 and d2 else None
+            debug_rows.append({"FOR ID": req_id2, "First Seen": first or "NOT IN HISTORY", "Date Closed": close_str, "Days": days_val})
+
+        with st.expander("Debug: Days to Close calculation"):
+            import pandas as pd
+            st.dataframe(pd.DataFrame(debug_rows))
+
         # All items text for trend analysis
         all_context = []
         for run in open_history:
