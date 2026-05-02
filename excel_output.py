@@ -12,12 +12,19 @@ OPEN_COLUMNS = [
     ("Action Items", 42),
     ("Priority", 12),
     ("Status", 26),
+    ("Carry-Over", 13),
     ("Due Date", 14),
     ("Confidence", 14),
     ("Confidence Notes", 38),
     ("Flags", 28),
     ("Flag Notes", 38),
 ]
+
+CARRY_OVER_COLORS = {
+    3: "FFF2CC",  # yellow
+    4: "FFD700",  # amber
+}
+CARRY_OVER_COLOR_5PLUS = "FF6B6B"  # red
 
 CLOSED_COLUMNS = [
     ("FOR ID", 10),
@@ -101,9 +108,20 @@ def _open_items_sheet(ws, action_items: list[dict]):
         owner_conf = item.get("owner_confidence", "High")
         priority_conf = item.get("priority_confidence", "High")
         has_low_conf = owner_conf == "Low" or priority_conf == "Low"
+        consecutive = item.get("consecutive_meetings", 1)
+        is_carry_over = item.get("carry_over_flag", False)
 
         conf_label = _confidence_label(owner_conf, priority_conf)
         conf_fill = _confidence_fill(owner_conf, priority_conf)
+
+        if is_carry_over:
+            carry_label = f"{consecutive} meetings"
+            carry_color = CARRY_OVER_COLOR_5PLUS if consecutive >= 5 else CARRY_OVER_COLORS.get(consecutive, CARRY_OVER_COLOR_5PLUS)
+            carry_fill = PatternFill("solid", fgColor=carry_color)
+        else:
+            carry_label = ""
+            carry_fill = None
+
         row_base_fill = PatternFill("solid", fgColor=LOW_CONF_ROW_TINT if has_low_conf else ("F9F9F9" if i % 2 == 0 else "FFFFFF"))
 
         values = [
@@ -114,6 +132,7 @@ def _open_items_sheet(ws, action_items: list[dict]):
             item.get("action_items", ""),
             priority,
             item.get("status", ""),
+            carry_label,
             item.get("due_date", "Not specified"),
             conf_label,
             item.get("confidence_notes", ""),
@@ -129,10 +148,13 @@ def _open_items_sheet(ws, action_items: list[dict]):
             if col_idx == 6:  # Priority
                 cell.fill = PatternFill("solid", fgColor=PRIORITY_COLORS.get(priority, "FFFFFF"))
                 cell.font = Font(bold=True, name="Calibri", size=10)
-            elif col_idx == 9:  # Confidence
+            elif col_idx == 8:  # Carry-Over
+                cell.fill = carry_fill if carry_fill else row_base_fill
+                cell.font = Font(bold=is_carry_over, name="Calibri", size=10)
+            elif col_idx == 10:  # Confidence
                 cell.fill = conf_fill
                 cell.font = Font(bold=has_low_conf, name="Calibri", size=10)
-            elif flag_str and col_idx == 11:  # Flags
+            elif flag_str and col_idx == 12:  # Flags
                 cell.fill = FLAG_FILL
             else:
                 cell.fill = row_base_fill
@@ -142,15 +164,21 @@ def _open_items_sheet(ws, action_items: list[dict]):
     summary_row = len(action_items) + 2
     ws.cell(row=summary_row, column=1, value=f"Total open: {len(action_items)}").font = Font(bold=True, name="Calibri", size=10)
 
+    carry_count = sum(1 for i in action_items if i.get("carry_over_flag"))
+    if carry_count:
+        cc = ws.cell(row=summary_row, column=8, value=f"Carry-overs: {carry_count}")
+        cc.font = Font(bold=True, name="Calibri", size=10)
+        cc.fill = PatternFill("solid", fgColor=CARRY_OVER_COLORS[3])
+
     low_conf_count = sum(1 for i in action_items if i.get("owner_confidence") == "Low" or i.get("priority_confidence") == "Low")
     if low_conf_count:
-        lc = ws.cell(row=summary_row, column=9, value=f"Low confidence: {low_conf_count}")
+        lc = ws.cell(row=summary_row, column=10, value=f"Low confidence: {low_conf_count}")
         lc.font = Font(bold=True, name="Calibri", size=10)
         lc.fill = PatternFill("solid", fgColor=CONFIDENCE_COLORS["Low"])
 
     flagged = sum(1 for i in action_items if i.get("flags"))
     if flagged:
-        fc = ws.cell(row=summary_row, column=11, value=f"Flagged: {flagged}")
+        fc = ws.cell(row=summary_row, column=12, value=f"Flagged: {flagged}")
         fc.font = Font(bold=True, name="Calibri", size=10)
         fc.fill = FLAG_FILL
 
