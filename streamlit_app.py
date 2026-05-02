@@ -1,9 +1,11 @@
 import io
 import json
 import os
+import re
 import tempfile
+from collections import Counter, defaultdict
 from contextlib import redirect_stdout
-from datetime import datetime
+from datetime import datetime, date
 from pathlib import Path
 
 import streamlit as st
@@ -13,6 +15,26 @@ load_dotenv()
 
 REFERENCES_FILE = "references.json"
 ROSTER_FILE = "roster.json"
+OPEN_HISTORY_FILE = "open_items_history.json"
+CLOSED_HISTORY_FILE = "closed_items_history.json"
+MEETING_HISTORY_FILE = "meeting_history.json"
+
+REGIONS = {
+    "Europe":        ["europe", "germany", "france", "uk", "belgium", "netherlands", "spain", "italy"],
+    "China":         ["china", "chinese", "beijing", "shanghai"],
+    "Asia-Pacific":  ["asia", "japan", "singapore", "korea", "apac", "asia-pacific"],
+    "LATAM":         ["latam", "latin america", "brazil", "mexico", "colombia"],
+    "North America": ["north america", "na", "usa", "canada", "houston", "dallas"],
+}
+
+EQUIPMENT = {
+    "Boom":         ["boom", "booms"],
+    "Telehandler":  ["telehandler", "telehandlers"],
+    "GX4":          ["gx4"],
+    "GX9":          ["gx9"],
+    "GT7":          ["gt7"],
+    "GT9":          ["gt9"],
+}
 
 st.set_page_config(page_title="FOR Meeting Assistant", page_icon="📋", layout="wide")
 st.title("📋 FOR Meeting Assistant")
@@ -55,7 +77,7 @@ def run_processor(transcript_text: str, meeting_date: str):
 
 # ── tabs ──────────────────────────────────────────────────────────────────────
 
-tab_process, tab_refs, tab_roster = st.tabs(["Process Transcript", "References", "Roster"])
+tab_process, tab_refs, tab_roster, tab_dash = st.tabs(["Process Transcript", "References", "Roster", "Dashboard"])
 
 
 # ── Tab 1: Process Transcript ─────────────────────────────────────────────────
@@ -276,3 +298,129 @@ with tab_roster:
                 st.rerun()
             else:
                 st.warning("Rule ID is required.")
+
+
+# ── Tab 4: Dashboard ──────────────────────────────────────────────────────────
+
+with tab_dash:
+    st.subheader("Dashboard")
+
+    open_history  = json.loads(Path(OPEN_HISTORY_FILE).read_text(encoding="utf-8")) if Path(OPEN_HISTORY_FILE).exists() else []
+    closed_items  = json.loads(Path(CLOSED_HISTORY_FILE).read_text(encoding="utf-8")) if Path(CLOSED_HISTORY_FILE).exists() else []
+    meeting_hist  = json.loads(Path(MEETING_HISTORY_FILE).read_text(encoding="utf-8")) if Path(MEETING_HISTORY_FILE).exists() else []
+
+    if not open_history and not closed_items:
+        st.info("No data yet — process at least one transcript to see the dashboard.")
+    else:
+        # ── Key metrics ──
+        current_open = len(open_history[0]["items"]) if open_history else 0
+        total_closed = len(closed_items)
+        total_meetings = len(open_history)
+
+        # Avg days to close — match first appearance in open_history to close date
+        days_list = []
+        reversed_history = list(reversed(open_history))
+        for c_item in closed_items:
+            req_id = str(c_item.get("request_id", "")).strip().upper()
+            close_date_str = c_item.get("date_closed", "")
+            first_seen = None
+            for run in reversed_history:
+                ids_in_run = [str(i.get("request_id", "")).strip().upper() for i in run.get("items", [])]
+                if req_id in ids_in_run:
+                    first_seen = run.get("meeting_date", "")
+            if first_seen and close_date_str and first_seen != "Unknown" and close_date_str != "Unknown":
+                try:
+                    d1 = datetime.strptime(first_seen, "%Y-%m-%d")
+                    d2 = datetime.strptime(close_date_str, "%Y-%m-%d")
+                    days = (d2 - d1).days
+                    if days >= 0:
+                        days_list.append(days)
+                except ValueError:
+                    pass
+        avg_days = round(sum(days_list) / len(days_list), 1) if days_list else None
+
+        # All items text for trend analysis
+        all_context = []
+        for run in open_history:
+            for item in run.get("items", []):
+                all_context.append(item.get("context_summary", "").lower())
+        for c in closed_items:
+            all_context.append(c.get("context_summary", "").lower())
+
+        col1, col2, col3, col4 = st.columns(4)
+        col1.metric("Open Items (Latest)", current_open)
+        col2.metric("Total Closed (All Time)", total_closed)
+        col3.metric("Meetings Processed", total_meetings)
+        col4.metric("Avg Days to Close", f"{avg_days} days" if avg_days is not None else "N/A")
+
+        st.divider()
+
+        # ── Open vs Closed over time ──
+        col_left, col_right = st.columns(2)
+
+        with col_left:
+            st.markdown("**Open Items Per Meeting**")
+            if open_history:
+                chart_data = {
+                    run.get("meeting_date", f"Run {i+1}"): len(run.get("items", []))
+                    for i, run in enumerate(reversed(open_history))
+                }
+                import pandas as pd
+                df_open = pd.DataFrame(list(chart_data.items()), columns=["Meeting", "Open Items"])
+                df_open = df_open.set_index("Meeting")
+                st.bar_chart(df_open)
+
+        with col_right:
+            st.markdown("**Flag Frequency (All Time)**")
+            flag_counts = Counter()
+            for run in open_history:
+                for item in run.get("items", []):
+                    for f in item.get("flags", []):
+                        flag_counts[f] += 1
+            for c in closed_items:
+                pass  # closed items don't store flags in history
+            if flag_counts:
+                import pandas as pd
+                df_flags = pd.DataFrame(list(flag_counts.items()), columns=["Flag", "Count"]).set_index("Flag")
+                st.bar_chart(df_flags)
+            else:
+                st.info("No flags recorded yet.")
+
+        st.divider()
+
+        # ── Regional trends ──
+        st.markdown("**Regional Trends — Frequency in Open Items**")
+        region_counts_by_meeting = defaultdict(dict)
+        for run in reversed(open_history):
+            meeting_date = run.get("meeting_date", "Unknown")
+            for region, keywords in REGIONS.items():
+                count = sum(
+                    1 for item in run.get("items", [])
+                    if any(kw in item.get("context_summary", "").lower() for kw in keywords)
+                )
+                region_counts_by_meeting[meeting_date][region] = count
+
+        if region_counts_by_meeting:
+            import pandas as pd
+            df_regions = pd.DataFrame(region_counts_by_meeting).T.fillna(0)
+            df_regions = df_regions[[c for c in REGIONS.keys() if c in df_regions.columns]]
+            st.bar_chart(df_regions)
+        else:
+            st.info("Not enough data for regional trends yet.")
+
+        st.divider()
+
+        # ── Equipment trends ──
+        st.markdown("**Equipment Type Trends — Frequency Across All Items**")
+        equip_counts = Counter()
+        for text in all_context:
+            for equip, keywords in EQUIPMENT.items():
+                if any(kw in text for kw in keywords):
+                    equip_counts[equip] += 1
+
+        if equip_counts:
+            import pandas as pd
+            df_equip = pd.DataFrame(list(equip_counts.items()), columns=["Equipment", "Count"]).set_index("Equipment")
+            st.bar_chart(df_equip)
+        else:
+            st.info("No equipment type data yet.")

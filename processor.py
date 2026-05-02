@@ -162,7 +162,15 @@ def process_transcript(transcript_text: str, output_path: str, roster_path: str 
     open_history.insert(0, {
         "meeting_date": meeting.get("date", "Unknown"),
         "generated_at": datetime.now().strftime("%Y-%m-%d %H:%M"),
-        "items": [{"request_id": i.get("request_id"), "status": i.get("status", "")} for i in open_items],
+        "items": [
+            {
+                "request_id": i.get("request_id"),
+                "status": i.get("status", ""),
+                "context_summary": i.get("context_summary", ""),
+                "flags": i.get("flags", []),
+            }
+            for i in open_items
+        ],
     })
 
     closed_history = _load_json(CLOSED_HISTORY_FILE)
