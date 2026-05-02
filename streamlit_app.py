@@ -318,6 +318,16 @@ with tab_dash:
         total_meetings = len(open_history)
 
         # Avg days to close — match first appearance in open_history to close date
+        DATE_FORMATS = ["%Y-%m-%d", "%B %d, %Y", "%b %d, %Y", "%m/%d/%Y", "%d/%m/%Y", "%Y/%m/%d"]
+
+        def parse_date(s: str):
+            for fmt in DATE_FORMATS:
+                try:
+                    return datetime.strptime(s.strip(), fmt)
+                except ValueError:
+                    continue
+            return None
+
         days_list = []
         reversed_history = list(reversed(open_history))
         for c_item in closed_items:
@@ -329,14 +339,12 @@ with tab_dash:
                 if req_id in ids_in_run:
                     first_seen = run.get("meeting_date", "")
             if first_seen and close_date_str and first_seen != "Unknown" and close_date_str != "Unknown":
-                try:
-                    d1 = datetime.strptime(first_seen, "%Y-%m-%d")
-                    d2 = datetime.strptime(close_date_str, "%Y-%m-%d")
+                d1 = parse_date(first_seen)
+                d2 = parse_date(close_date_str)
+                if d1 and d2:
                     days = (d2 - d1).days
-                    if days >= 0:
+                    if days > 0:
                         days_list.append(days)
-                except ValueError:
-                    pass
         avg_days = round(sum(days_list) / len(days_list), 1) if days_list else None
 
         # All items text for trend analysis
