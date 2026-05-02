@@ -130,5 +130,13 @@ def process_transcript(transcript_text: str, output_path: str, roster_path: str 
     _save_json(OPEN_HISTORY_FILE, open_history)
     _save_json(MEETING_HISTORY_FILE, meeting_history)
 
+    from email_draft import generate_email_draft
+    draft = generate_email_draft(result)
+
+    draft_path = Path(output_path).with_suffix(".txt")
+    draft_path.write_text(draft, encoding="utf-8")
+    print(f"Email draft saved: {draft_path}")
+
     print(f"\nDone! Output: {output_path}")
+    result["_email_draft"] = draft
     return result
