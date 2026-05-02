@@ -1,0 +1,47 @@
+{
+  "members": [
+    {
+      "name": "Linda",
+      "full_name": "Linda Placeholder",
+      "email": "linda.placeholder@company.com",
+      "title": "Procurement Specialist",
+      "department": "Procurement"
+    },
+    {
+      "name": "Tom",
+      "full_name": "Tom Placeholder",
+      "email": "tom.placeholder@company.com",
+      "title": "SIOP Master Scheduler",
+      "department": "Supply Chain"
+    },
+    {
+      "name": "Derek",
+      "full_name": "Derek Placeholder",
+      "email": "derek.placeholder@company.com",
+      "title": "Procurement Analyst",
+      "department": "Procurement"
+    }
+  ],
+  "flag_rules": [
+    {
+      "rule": "engine_country_move",
+      "description": "Flag any discussion about moving engines or machines to a different country or region",
+      "keywords": ["moving to", "ship to", "transfer to", "relocate", "export", "country", "region", "cross-border"]
+    },
+    {
+      "rule": "long_pending",
+      "description": "Flag any items described as pending for more than 2 weeks without resolution",
+      "keywords": ["weeks", "months", "still waiting", "no response", "haven't heard", "been pending"]
+    },
+    {
+      "rule": "escalation_needed",
+      "description": "Flag items where escalation to leadership is discussed",
+      "keywords": ["escalate", "escalation", "leadership", "management", "VP", "director"]
+    },
+    {
+      "rule": "alternate_sourcing",
+      "description": "Flag any discussion about finding alternate suppliers or swap units",
+      "keywords": ["alternate", "alternative", "swap unit", "backup supplier", "shortlist", "qualified alternates"]
+    }
+  ]
+}

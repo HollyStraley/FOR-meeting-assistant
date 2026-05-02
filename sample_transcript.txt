@@ -1,0 +1,15 @@
+FOR Meeting Transcript - Sample
+Date: 2026-05-02
+Attendees: Linda (Procurement), Tom (SIOP Master Scheduler), Derek (Procurement)
+
+Linda (Procurement): I have to flag again that we still haven't gotten a confirmed delivery date from the supplier on that component. It's been three weeks.
+
+Tom: Which one — is this still the 77B situation?
+
+Linda: Yes. Derek has been chasing them but there's no response. At this point we may need to look at alternates.
+
+Tom: Okay. Derek, can you escalate to their regional account manager directly and get me an answer by Monday? And Linda, start a shortlist of qualified alternates just in case.
+
+Derek (Procurement): Understood, I'll escalate today.
+
+Linda: I'll have a shortlist of two or three alternates by end of week.
