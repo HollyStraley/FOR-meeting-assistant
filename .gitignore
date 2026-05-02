@@ -6,6 +6,7 @@ closed_items_history.json
 meeting_history.json
 watch_items_history.json
 open_items_history.json
+for_id_counter.json
 .processed_transcripts.log
 transcripts/
 output/

@@ -11,6 +11,7 @@ WATCH_HISTORY_FILE = "watch_items_history.json"
 OPEN_HISTORY_FILE = "open_items_history.json"
 DEFAULT_ROSTER_FILE = "roster.json"
 REFERENCES_FILE = "references.json"
+FOR_ID_COUNTER_FILE = "for_id_counter.json"
 
 
 def load_references() -> dict:
@@ -33,6 +34,45 @@ def _save_json(path: str, data):
 
 def load_roster(roster_path: str = DEFAULT_ROSTER_FILE) -> dict:
     return json.loads(Path(roster_path).read_text(encoding="utf-8"))
+
+
+def _is_real_for_id(val: str) -> bool:
+    """Returns True if val looks like FOR-NNN."""
+    import re
+    return bool(re.match(r"^FOR-\d+$", val.strip(), re.IGNORECASE))
+
+
+def _parse_for_number(val: str) -> int:
+    import re
+    m = re.match(r"^FOR-(\d+)$", val.strip(), re.IGNORECASE)
+    return int(m.group(1)) if m else 0
+
+
+def load_for_counter() -> int:
+    p = Path(FOR_ID_COUNTER_FILE)
+    if p.exists():
+        return json.loads(p.read_text(encoding="utf-8")).get("next_id", 1)
+    return 1
+
+
+def save_for_counter(next_id: int):
+    Path(FOR_ID_COUNTER_FILE).write_text(json.dumps({"next_id": next_id}, indent=2), encoding="utf-8")
+
+
+def assign_for_ids(items: list[dict], counter: int) -> tuple[list[dict], int]:
+    """Assign real FOR-NNN IDs to any item missing one, and update counter."""
+    for item in items:
+        raw = str(item.get("request_id", "")).strip()
+        if _is_real_for_id(raw):
+            # Keep existing ID, bump counter if needed
+            num = _parse_for_number(raw)
+            if num >= counter:
+                counter = num + 1
+        else:
+            # Assign next available ID
+            item["request_id"] = f"FOR-{counter:03d}"
+            counter += 1
+    return items, counter
 
 
 def detect_carry_overs(open_items: list[dict], open_history: list[dict]) -> list[dict]:
@@ -75,6 +115,15 @@ def process_transcript(transcript_text: str, output_path: str, roster_path: str 
     new_closed = result.get("closed_items", [])
     new_watch = result.get("watch_items", [])
     meeting = result.get("meeting", {})
+
+    # Assign real FOR IDs to any items missing them
+    counter = load_for_counter()
+    open_items, counter = assign_for_ids(open_items, counter)
+    new_closed, counter = assign_for_ids(new_closed, counter)
+    save_for_counter(counter)
+    result["open_items"] = open_items
+    result["closed_items"] = new_closed
+    print(f"FOR ID counter: next available is FOR-{counter:03d}")
 
     # Attach reference data to matching open items
     if references:
