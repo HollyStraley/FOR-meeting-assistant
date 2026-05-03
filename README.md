@@ -160,6 +160,40 @@ ANTHROPIC_API_KEY = "sk-ant-your-key-here"
 
 ---
 
+## Architecture
+
+### LLM Integration
+The app makes a single Claude API call per transcript using `claude-sonnet-4-6`. The call is structured with a detailed system prompt and a user prompt that includes the full transcript text plus injected context. The model returns a strict JSON object — no free-text parsing required. If the response cannot be parsed, the app surfaces the error rather than silently failing.
+
+### RAG (Retrieval-Augmented Generation)
+Two local knowledge files are loaded at runtime and injected directly into the LLM prompt before each API call:
+
+- **`roster.json`** — Team member names, titles, and emails. Gives the model the full list of known participants so it can confidently identify owners and flag low-confidence assignments when a name in the transcript doesn't match anyone on the roster.
+- **`references.json`** — A lookup table mapping FOR IDs to external tracking numbers, notes, and related files. After the LLM returns its output, the app performs a second-pass enrichment step that attaches any matching reference data to open items before writing the Excel file.
+
+This is a lightweight RAG pattern: no vector database or embeddings are used. Context is small and structured enough to fit directly in the prompt.
+
+### Multi-Step Orchestration
+Processing a single transcript involves multiple sequential steps coordinated by `processor.py`:
+
+1. **Load context** — Roster and references are read from disk
+2. **LLM call** — Claude extracts structured action items from the transcript
+3. **ID assignment** — Any item missing a valid `FOR-NNN` ID is assigned one from the persistent counter
+4. **First-seen tracking** — New FOR IDs are recorded with their first appearance date for cycle time calculation
+5. **Reference enrichment** — Open items are matched against `references.json` and enriched
+6. **Carry-over detection** — Open items are compared against historical runs to flag items with no status change across 3+ consecutive meetings
+7. **Excel generation** — A 4-tab styled workbook is written using openpyxl
+8. **Email draft generation** — A plain-text summary is generated from the structured result
+9. **History persistence** — All history files are updated so the next run has full context
+
+### No Fine-Tuning
+The app uses the base `claude-sonnet-4-6` model with no fine-tuning. All domain-specific behavior (SIOP terminology, FOR request patterns, flag rules, confidence scoring) is achieved through prompt engineering alone — specifically a detailed system prompt that defines the output schema, flag rules, and confidence criteria.
+
+### Tools & Tool Use
+The app does not use Claude's tool-use (function calling) feature. The LLM is given a single structured prompt and expected to return a complete JSON object in one shot. This keeps latency low and the call count to one per transcript.
+
+---
+
 ## Persistent Data Files
 
 These files are auto-created on first run and excluded from version control:
