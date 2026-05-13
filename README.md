@@ -2,6 +2,8 @@
 
 A Streamlit web app that reads SIOP (Sales, Inventory & Operations Planning) meeting transcripts and automatically extracts, tracks, and summarizes Firm Order Request (FOR) action items using the Claude AI API.
 
+📺 **[Watch the demo](https://youtu.be/SE9rJW5l8Rk)**
+
 ---
 
 ## Background
