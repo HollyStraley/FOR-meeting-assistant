@@ -4,6 +4,29 @@ A Streamlit web app that reads SIOP (Sales, Inventory & Operations Planning) mee
 
 ---
 
+## Background
+
+### Target User
+The **SIOP Master Scheduler** — responsible for managing all Firm Order Requests (FORs) across a global team of approximately 15 individuals. This includes tracking every open request, actioning items once applicable (e.g., moving a machine to a different forecast group once materials are approved), and keeping all stakeholders aligned across bi-weekly FOR meetings.
+
+### Current Workflow
+FOR requests originate via email or are raised during bi-weekly FOR meetings. Every open request is discussed at each meeting — covering who needs to do what, what is blocked, and what has been resolved. The workflow ends once the request is fully completed.
+
+With 15+ global participants on a call and a mix of long-running and new FOR requests being discussed simultaneously, it is difficult for the Master Scheduler to capture all notes, track owners, and keep the meeting running efficiently at the same time.
+
+### Problem Statement
+The SIOP Master Scheduler needed a way to automatically process a FOR meeting transcript and produce a structured list of all action items — including the context of each request, who owns it, what the current status is, priority level, and any flags for special situations (such as moving engines across country lines). The preferred output was an Excel sheet that could be saved in a shared Teams folder for all meeting participants to view.
+
+### GenAI Fit
+This problem is a strong fit for generative AI because the input is unstructured conversational language and the output requires interpretation, reasoning, and memory — not just keyword extraction. Specifically:
+
+1. **Language** — The model reads and understands raw meeting transcript text, including informal speech, broken sentences, and indirect references to FOR IDs
+2. **Reasoning** — The model infers who currently owns an action item based on conversational context, even when not explicitly stated
+3. **Generation** — The model produces readable, structured outputs (e.g., "Waiting on materials approval from Lisa before Janet can update the forecast group") from fragmented discussion
+4. **Agentic behavior** — The app acts as a persistent assistant across meetings: remembering items that have been open for multiple cycles, flagging carry-overs, and tracking cycle time from first appearance to resolution
+
+---
+
 ## What It Does
 
 Paste or upload a meeting transcript and the app will:
